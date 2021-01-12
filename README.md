@@ -1,5 +1,4 @@
 # php-vegas-renderer
-Interact with a SQL Database
 
 Install using composer :
 ```
