@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderProject", "RenderProject\RenderProject.csproj", "{1252BB79-6BD6-4466-BCEF-249E1BAFD351}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellRenderProject", "ShellRenderProject\ShellRenderProject.csproj", "{1252BB79-6BD6-4466-BCEF-249E1BAFD351}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

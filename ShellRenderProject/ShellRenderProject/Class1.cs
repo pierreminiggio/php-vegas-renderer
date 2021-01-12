@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms; //-- Keep for debug via MessageBox.show(message)
 using ScriptPortal.Vegas;
 
-namespace RenderProject
+namespace ShellRenderProject
 {
     public class EntryPoint
     {

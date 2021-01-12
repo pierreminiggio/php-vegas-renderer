@@ -7,8 +7,8 @@
     <ProjectGuid>{1252BB79-6BD6-4466-BCEF-249E1BAFD351}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RenderProject</RootNamespace>
-    <AssemblyName>RenderProject</AssemblyName>
+    <RootNamespace>ShellRenderProject</RootNamespace>
+    <AssemblyName>ShellRenderProject</AssemblyName>
     <DefaultLanguage>fr-FR</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
@@ -122,7 +122,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\RenderProject.rd.xml" />
+    <EmbeddedResource Include="Properties\ShellRenderProject.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">

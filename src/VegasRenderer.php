@@ -49,9 +49,9 @@ class VegasRenderer
             . DIRECTORY_SEPARATOR
             . '..'
             . DIRECTORY_SEPARATOR
-            . 'RenderProject'
+            . 'ShellRenderProject'
             . DIRECTORY_SEPARATOR
-            . 'RenderProject'
+            . 'ShellRenderProject'
             . DIRECTORY_SEPARATOR
             . 'Class1.cs'
             . $argsStr
