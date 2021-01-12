@@ -1,0 +1,24 @@
+{
+    "name": "pierreminiggio/vegas-renderer",
+    "description": "Vegas Renderer",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pierre MINIGGIO",
+            "email": "pierre@miniggiodev.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PierreMiniggio\\VegasRenderer\\": "src/"
+        }
+    },
+    "require-dev": {},
+    "scripts": {
+        "test": "php test.php"
+    }
+}
