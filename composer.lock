@@ -4,8 +4,38 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bed2f765fa515ade03a4a804811cb734",
-    "packages": [],
+    "content-hash": "7c9174c9ee7967681347e2d4c94b4ff8",
+    "packages": [
+        {
+            "name": "pierreminiggio/vegas-pro-17-script-portal-dll",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pierreminiggio/vegas-pro-17-script-portal-dll.git",
+                "reference": "de7a2b81534c46532d92e3153fb2e056606e03a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pierreminiggio/vegas-pro-17-script-portal-dll/zipball/de7a2b81534c46532d92e3153fb2e056606e03a9",
+                "reference": "de7a2b81534c46532d92e3153fb2e056606e03a9",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Pierre MINIGGIO",
+                    "email": "pierre@miniggiodev.fr"
+                }
+            ],
+            "description": "Simply brings the dll to your project",
+            "support": {
+                "issues": "https://github.com/pierreminiggio/vegas-pro-17-script-portal-dll/issues",
+                "source": "https://github.com/pierreminiggio/vegas-pro-17-script-portal-dll/tree/1.0.0"
+            },
+            "time": "2021-01-12T20:24:13+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
