@@ -19,8 +19,7 @@ class VegasRenderer
      */
     public function render(
         string $projectFilePath,
-        string $rendererName,
-        string $templateName,
+        Template $template,
         string $outputFilePath
     )
     {
@@ -28,8 +27,8 @@ class VegasRenderer
 
         $args = [
             'projectFilePath' => $projectFilePath,
-            'rendererName' => $rendererName,
-            'templateName' => $templateName,
+            'rendererName' => $template->getRendererName(),
+            'templateName' => $template->getTemplateName(),
             'outputFilePath' => $outputFilePath
         ];
 

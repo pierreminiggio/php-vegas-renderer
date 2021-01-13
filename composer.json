@@ -21,5 +21,8 @@
     "scripts": {
         "test": "php test.php",
         "load": "php load.php"
+    },
+    "require-dev": {
+        "illuminate/support": "^8.22"
     }
 }

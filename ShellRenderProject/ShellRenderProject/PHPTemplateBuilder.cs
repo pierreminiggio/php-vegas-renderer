@@ -9,13 +9,13 @@ namespace ShellRenderProject
     {
         public void FromVegas(Vegas myVegas)
         {
-            writeDownRenderersAndTemplates(myVegas.Renderers);
+            writeDownRenderersAndTemplates(myVegas);
             myVegas.Exit();
         }
 
-        public void writeDownRenderersAndTemplates(Renderers renderers)
+        public void writeDownRenderersAndTemplates(Vegas myVegas)
         {
-
+            Renderers renderers = myVegas.Renderers;
             List<RendererEntity> entityList = new List<RendererEntity>();
 
             foreach (Renderer renderer in renderers)
@@ -26,19 +26,19 @@ namespace ShellRenderProject
                     templateList.Add(template.Name);
                 }
 
-                entityList.Add(new RendererEntity(renderer.FileTypeName, templateList));
+                entityList.Add(new RendererEntity(renderer.Name, templateList));
             }
 
-            string json = "[";
+            string jsonEntities = "[";
 
             foreach (RendererEntity entity in entityList)
             {
-                if (json != "[") {
-                    json += ",";
+                if (jsonEntities != "[") {
+                    jsonEntities += ",";
                 }
 
-                json += "{";
-                json += "\"name\": \"" + entity.name + "\"";
+                jsonEntities += "{";
+                jsonEntities += "\"name\": \"" + entity.name + "\"";
                 string jsonTemplates = "[";
 
                 foreach (string templateName in entity.templates)
@@ -51,12 +51,14 @@ namespace ShellRenderProject
                 }
 
                 jsonTemplates += "]";
-                json += ",";
-                json += "\"templates\": " + jsonTemplates + "";
-                json += "}";
+                jsonEntities += ",";
+                jsonEntities += "\"templates\": " + jsonTemplates + "";
+                jsonEntities += "}";
             }
 
-            json += "]";
+            jsonEntities += "]";
+
+            string json = "{\"locale\": \"" + myVegas.AppCultureInfo + "\", \"version\": \"" + myVegas.Version + "\", \"renderers\": " + jsonEntities + "}";
             
             File.WriteAllText("./renderers.json", json);
         }

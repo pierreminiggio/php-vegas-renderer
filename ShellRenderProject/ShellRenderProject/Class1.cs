@@ -70,7 +70,7 @@ namespace ShellRenderProject
         {
             foreach (Renderer renderer in renderers)
             {
-                if (renderer.FileTypeName == rendererName)
+                if (renderer.Name == rendererName)
                 {
                     foreach (RenderTemplate template in renderer.Templates)
                     {
