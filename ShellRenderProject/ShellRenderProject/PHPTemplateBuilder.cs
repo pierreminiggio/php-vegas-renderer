@@ -26,7 +26,7 @@ namespace ShellRenderProject
                     templateList.Add(template.Name);
                 }
 
-                entityList.Add(new RendererEntity(renderer.Name, templateList));
+                entityList.Add(new RendererEntity(renderer.Name, renderer.FileExtensions[0], templateList));
             }
 
             string jsonEntities = "[";
@@ -39,6 +39,8 @@ namespace ShellRenderProject
 
                 jsonEntities += "{";
                 jsonEntities += "\"name\": \"" + entity.name + "\"";
+                jsonEntities += ",";
+                jsonEntities += "\"extension\": \"" + entity.fileExension + "\"";
                 string jsonTemplates = "[";
 
                 foreach (string templateName in entity.templates)
@@ -67,11 +69,13 @@ namespace ShellRenderProject
     public class RendererEntity
     {
         public string name;
+        public string fileExension;
         public List<string> templates;
 
-        public RendererEntity(string rendererName, List<string> templateList)
+        public RendererEntity(string rendererName, string extension, List<string> templateList)
         {
             name = rendererName;
+            fileExension = extension;
             templates = templateList;
         }
     }

@@ -97,11 +97,18 @@ class ' . $classname . '
 
         foreach ($rawRenderers as $rawRenderer) {
 
+            $rawExtension = $rawRenderer['extension'];
+            $extensionPSR4Name = strtoupper(str_replace('*.', '', $rawExtension));
+            $extensionDir = $templateDir . DIRECTORY_SEPARATOR . $extensionPSR4Name;
+
+            if (! file_exists($extensionDir)) {
+                mkdir($extensionDir);
+            }
+
             $rawRendererName = $rawRenderer['name'];
             $constantName = $this->screamCasealize($rawRendererName);
             $rendererPSR4Name = $this->pascalize($rawRendererName);
-            $rendererInitials = $this->getInitials($rawRendererName);
-            $rendererDir = $templateDir . DIRECTORY_SEPARATOR . $rendererPSR4Name;
+            $rendererDir = $extensionDir . DIRECTORY_SEPARATOR . $rendererPSR4Name;
 
             if (! file_exists($rendererDir)) {
                 mkdir($rendererDir);
@@ -112,11 +119,11 @@ class ' . $classname . '
                     continue;
                 }
 
-                $templateClass = $rendererInitials . $this->pascalize($template);
+                $templateClass = $extensionPSR4Name . $this->pascalize($template);
                 $templateFileName = $rendererDir . DIRECTORY_SEPARATOR . $templateClass . '.php';
                 file_put_contents($templateFileName, '<?php
 
-namespace ' . $versionNamespace . '\\Template\\' . $rendererPSR4Name . ';
+namespace ' . $versionNamespace . '\\Template\\' . $extensionPSR4Name . '\\' . $rendererPSR4Name . ';
 
 use ' . $versionNamespace . '\\' . $rendererEnumClassname . ';
 use ' . $pierreMiniggioNamespace . $abstractTemplateClassname . ';
@@ -156,17 +163,6 @@ class ' . $templateClass . ' extends ' . $abstractTemplateClassname . '
             '_',
             array_map(
                 fn ($word) => strtoupper($word),
-                explode('-', Str::slug($input))
-            )
-        );
-    }
-
-    private function getInitials(string $input): string
-    {
-        return implode(
-            '',
-            array_map(
-                fn ($word) => substr(strtoupper($word), 0, 1),
                 explode('-', Str::slug($input))
             )
         );
