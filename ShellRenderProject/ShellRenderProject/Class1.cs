@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Windows.Forms; //-- Keep for debug via MessageBox.show(message)
-using ScriptPortal.Vegas;
+﻿using ScriptPortal.Vegas;
+using System;
 
 namespace ShellRenderProject
 {
@@ -73,7 +66,7 @@ namespace ShellRenderProject
             ;
         } 
 
-        public RenderTemplate findTemplate(String rendererName, String templateName, Renderers renderers)
+        public RenderTemplate findTemplate(string rendererName, string templateName, Renderers renderers)
         {
             foreach (Renderer renderer in renderers)
             {
@@ -93,4 +86,3 @@ namespace ShellRenderProject
         }
     }
 }
-
