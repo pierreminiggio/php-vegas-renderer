@@ -18,3 +18,6 @@ $renderer->render(
 );
 
 ```
+
+You can generate your own vegas pro version's classes by changing the string argument in load.php and by running `composer run-script load`
+Feel free to send me a PR if you do generate them.
